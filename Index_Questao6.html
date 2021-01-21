@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <title>Teste - QUIVER</title>
+</head>
+
+<body>
+    <h2>Questão 6 - QUIVER</h2>
+
+    <script>
+        function mostra(frase) {
+            document.write(frase + '<br>')
+        }
+        mostra('<strong>Cartela de Sorteia 6 numeros, entre 0 a 60.</strong>')
+
+        //sorteio
+        var sorteio = []
+        for (var i = 0; i < 6; i++) {
+            sorteio[i] = Math.floor(Math.random() * 60)
+
+        }
+      
+
+        mostra('<hr><strong>Numeros Sorteados : ' + sorteio + '</strong> </hr>')
+        sorteio.sort(function (a, b) {
+            return a - b;
+        })
+        mostra('<strong> Sorteados Ordenados : </strong>' + sorteio)
+
+        //
+
+        for (var xy = 0; xy <= 20; xy++) {
+
+            var array = []
+            for (var i = 0; i < 6; i++) {
+                var num = Math.round(Math.random() * 60)
+                array.push(num)
+
+            }
+            mostra('<hr>Numeros da cartela: ' + array + '</hr>')
+            array.sort(function (a, b) {
+                return a - b;
+            })
+
+        }
+
+        array.sort(function (a, b) {
+            return a - b;
+        })
+        mostra('<font color="blue"><h3>Resultado:</h3></font>')
+
+        //
+        var acerto = 0
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 6; j++) {
+                if (array[i] == sorteio[j]) {
+                    acerto++;
+                    mostra('Acertou o numero : ' + array[i])
+                }
+            }
+        }
+
+        if (acerto > 0) {
+            mostra('Quantidade de Acertos: ' + acerto)
+        } else {
+            mostra('Voce não acertou!!')
+        }
+
+    </script>
+</body>
+
+</html>
